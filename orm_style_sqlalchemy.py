@@ -78,7 +78,7 @@ print('aggregation********')
 print(result7)
 
 #--------- having
-result8 = session.query(Thing.owner, func.sum(Thing.value)).group_by(Thing.owner).having(Thing.value<70).all()
+result8 = session.query(Thing.owner, func.sum(Thing.value)).group_by(Thing.owner).having(func.sum(Thing.value)<70).all()
 
 print('aggregation - having cluase ********')
 print(result8)
